@@ -1,0 +1,63 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+
+  <script>
+    const array = ['target_1', 'target_2']
+
+    array.forEach((n) => {
+      regis(n);
+    });
+
+    function regis(array) {
+      AFRAME.registerComponent(array, {
+        init: function () {
+          this.el.addEventListener("targetFound", (event) => {
+            window.location.href = "/gesture.html"
+          });
+
+          this.el.addEventListener("targetLost", (event) => {
+          });
+        },
+      });
+    }
+  </script>
+
+  <body>
+    <a-scene
+      mindar-image="imageTargetSrc: /src/targets2.mind;"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-assets>
+        <a-asset-item id="noodleCup" src="/src/model/NoodleCup_Low.gltf"></a-asset-item> <!-- 3D Model -->
+      </a-assets>
+
+      <a-entity
+        id="mouseCursor"
+        cursor="rayOrigin: mouse"
+        raycaster="objects: .clickable"
+      ></a-entity>
+
+      <a-camera position="0 0 0" look-controls="enabled: false" id="first-camera"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0" target_1>
+        <a-gltf-model rotation="0 0 0 " position="0 -0.75 0" scale="0.3 0.3 0.3" src="#noodleCup" animation-mixer>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 1" target_2>
+        <a-gltf-model rotation="0 0 0 " position="0 -0.75 0" scale="0.3 0.3 0.3" src="#noodleCup" animation-mixer>
+      </a-entity>
+
+    </a-scene>
+
+  </body>
+</html>

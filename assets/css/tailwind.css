@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: 'DB_Heavent';
+  src: local("DB_Heavent"),
+    url('~assets/fonts/DB_Heavent/Bd_Cond_It.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DB_Heavent';
+  src: local("DB_Heavent"),
+    url('~assets/fonts/DB_Heavent/Bd_Cond.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DB_Heavent';
+  src: local("DB_Heavent"),
+    url('~assets/fonts/DB_Heavent/Bd.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DB_Heavent';
+  src: local("DB_Heavent"),
+    url('~assets/fonts/DB_Heavent/Cond_It.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DB_Heavent';
+  src: local("DB_Heavent"),
+    url('~assets/fonts/DB_Heavent/Cond.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DB_Heavent';
+  src: local("DB_Heavent"),
+    url('~/assets/fonts/DB_Heavent/Med_It.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DB_Heavent';
+  src: local("DB_Heavent"),
+    url('~/assets/fonts/DB_Heavent/Med.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DB_Heavent';
+  src: local("DB_Heavent"),
+    url('~/assets/fonts/DB_Heavent/Regular.ttf') format('truetype');
+}
+
+@tailwind utilities;
+
+/* * {
+  font-family: "DB_Heavent";
+} */
